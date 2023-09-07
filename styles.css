@@ -62,6 +62,10 @@ h1 {
     cursor: pointer;
 }
 
+label:hover {
+    cursor: text;
+}
+
 fieldset {
     display: flex;
     flex-direction: column;
@@ -78,6 +82,17 @@ fieldset {
     background-color: #131339;
     border: solid 1px #37ed52;
     color: #ffffff;
+    padding: 5px;
+}
+
+.text-input:focus {
+    border: solid 1px #37ed52;
+    outline: none;
+    box-shadow: 4px 4px 0px #397c43;
+}
+
+.radioBtn {
+    cursor: pointer;
 }
 
 .add-div {
@@ -125,6 +140,7 @@ fieldset {
     align-items: center;
     justify-content: center;
     gap: 5px;
+    height: 30px;
 }
 
 footer {
