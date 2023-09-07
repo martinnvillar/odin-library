@@ -1,0 +1,147 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #131339;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url(webfont/Sen-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'BoldFont' ;
+    src: url(webfont/Sen-Bold.ttf);
+}
+
+* {
+    font-family: 'MyFont';
+    font-weight: bold;
+}
+
+h1 {
+    font-family: 'BoldFont';
+    text-shadow: 4px 4px 0px #397c43;
+    color: #37ed52;
+    font-size: 70px;
+    font-weight: lighter;
+}
+
+.title-div {
+    text-align: center;
+}
+
+.bookInput {
+    color: #ffff;
+}
+
+.addBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 130px;
+    border-radius: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #37ed52;
+    color: #ffffff;
+    font-family: 'BoldFont';
+    box-shadow: 4px 4px 0px #397c43;
+    transition: transform 0.4s ease-in-out;
+    border: none;
+}
+
+.addBtn:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 22%;
+    gap: 10px;
+    border: solid 1px #37ed52;
+    box-shadow: 5px 5px 0px #397c43;
+}
+
+.text-input {
+    height: 30px;
+    width: 100%;
+    background-color: #131339;
+    border: solid 1px #37ed52;
+    color: #ffffff;
+}
+
+.add-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm,
+.cancel {
+    height: 40px;
+    width: 70px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.confirm:hover,
+.cancel:hover {
+    cursor: pointer;
+    transform: scale(0.96);
+}
+
+.confirm {
+    background-color: #37ed52;
+    color: #ffffff;
+    border: none;
+}
+
+.cancel {
+    background-color: #ed3d37;
+    color: #ffffff;
+    border: none; 
+}
+
+.btn-div {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: lighter;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover,
+a:visited {
+    text-decoration: underline;
+    color: #ffffff;
+}

@@ -5,13 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="icon.png">
+    <script src="main.js" defer></script>
     <title>Book Library</title>
 </head>
 <body>
-    <header class="header">
+    <div class="title-div">
         <h1>BookLibrary</h1>
-        <button class="newBook">Add Book</button>
-    </head>
+    </div>
+    <div class="add-div">
+        <button class="addBtn">+ Add book</button>
+    </div>
+    <div id="hiddenForm" class="bookInput">
+        <form>
+            <fieldset>
+                <label for="title-input" class="label-txt">Title:</label>
+                <input type="text" class="text-input" id="title" name="title-input" placeholder="Book Title" required>
+                <label for="author-input">Author:</label>
+                <input type="text" class="text-input" id="author" name="author-input" placeholder="Author" required>
+                <label for="pages-input">Number of pages:</label>
+                <input type="number" class="text-input" id="pages" name="pages-input" placeholder="Nº of pages" required>
+                <label for="readOrNot">Have you read it?</label>
+                <div class="radio-div">
+                    <p>Yes</p>
+                    <input type="radio" name="readOrNot" value="read">
+                    <p>No</p>
+                    <input type="radio" name="readOrNot" value="notRead">
+                </div>
+                <div class="btn-div">
+                    <button class="confirm">Add</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
     <footer>
          <p>
             <a href="https://github.com/martinnvillar" target="_blank">martinnvillar</a> © The Odin Project 2023
