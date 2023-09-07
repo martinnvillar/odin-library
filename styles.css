@@ -88,7 +88,7 @@ fieldset {
 .text-input:focus {
     border: solid 1px #37ed52;
     outline: none;
-    box-shadow: 4px 4px 0px #397c43;
+    box-shadow: 3px 3px 0px #397c43;
 }
 
 .radioBtn {
@@ -99,6 +99,7 @@ fieldset {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .confirm,
@@ -147,17 +148,58 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #37ed52;
     font-weight: lighter;
+    background-color: #16164e;
+    margin-top: 40px;
+    
 }
 
 a {
     text-decoration: none;
-    color: #ffffff;
+    color: #37ed52;
 }
 
 a:hover,
 a:visited {
     text-decoration: underline;
+    color: #37ed52;
+}
+
+h2 {
+    color: #37ed52;
+}
+
+.book-card {
+    border: solid 1px #37ed52;
     color: #ffffff;
+    padding: 10px;
+    box-shadow: 4px 4px 0px #397c43;
+    height: 220px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+.delete-card {
+    background-color: #ed3d37;
+    border: none;
+    height: 30px;
+    width: 50px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: lighter;
+    transition: transform 0.4s ease-in-out;
+    text-align: center;
+    justify-content: center;
+}
+
+.card-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-card:hover {
+    transform: scale(0.96);
+    cursor: pointer;
 }
