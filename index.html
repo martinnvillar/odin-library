@@ -16,36 +16,38 @@
         <button class="addBtn">+ Add book</button>
     </div>
     <div class="book-cards" id="book-cards"></div>
-    <div id="hiddenForm" class="bookInput">
-        <form id="new-book" style="display: none;">
-            <fieldset>
-                <label for="title-input" class="label-txt">Title:</label>
-                <input type="text" class="text-input" id="title" name="title-input" autocomplete="off" placeholder="Book Title" required>
-                <label for="author-input">Author:</label>
-                <input type="text" class="text-input" id="author" name="author-input" autocomplete="off" placeholder="Author" required>
-                <label for="pages-input">Number of pages:</label>
-                <input type="number" class="text-input" id="pages" name="pages-input" autocomplete="off" placeholder="Nº of pages" required>
-                <label for="readOrNot">Have you read it?</label>
-                <div class="radio-div">
-                    <p>Yes</p>
-                    <input type="radio" class="radioBtn" name="readOrNot" value="read">
-                    <p>No</p>
-                    <input type="radio" class="radioBtn" name="readOrNot" value="notRead">
-                </div>
-                <div class="btn-div">
-                    <button type="submit" class="confirm">Add</button>
-                    <button class="cancel">Cancel</button>
-                </div>
-            </fieldset>
-        </form>
-    </div>
+    <dialog id="book-dialog"> 
+        <div id="hiddenForm" class="bookInput">
+            <form id="new-book" method="dialog">
+                <fieldset>
+                    <label for="title-input" class="label-txt">Title:</label>
+                    <input type="text" class="text-input" id="title" name="title-input" autocomplete="off" placeholder="Book Title">
+                    <label for="author-input">Author:</label>
+                    <input type="text" class="text-input" id="author" name="author-input" autocomplete="off" placeholder="Author">
+                    <label for="pages-input">Number of pages:</label>
+                    <input type="number" class="text-input" id="pages" name="pages-input" autocomplete="off" placeholder="Nº of pages">
+                    <label for="readOrNot">Have you read it?</label>
+                    <div class="radio-div">
+                        <p>Yes</p>
+                        <input type="radio" class="radioBtn" id="read" name="readOrNot" value="read">
+                        <p>No</p>
+                        <input type="radio" class="radioBtn" id="not-read" name="readOrNot" value="notRead">
+                    </div>
+                    <div class="btn-div">
+                        <button type="submit" class="confirm">Add</button>
+                        <button class="cancel" value="cancel">Cancel</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </dialog>
     <div class="cards-container">
         <div class="book-card">
             <h2>The Four Agreements</h2>
             <h3>by Don Miguel Ruiz</h3>
             <p>160 pages</p>
             <div class="card-btn">
-                <button class="is-read">Read</button>
+                <button class="read"><p></p></button>
                 <button class="delete-card"><img class="trash-ico" src="trash.svg" alt="trash-ico"></button>
             </div>
         </div>
