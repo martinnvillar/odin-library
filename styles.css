@@ -114,11 +114,15 @@ fieldset {
 .text-input:focus {
     border: solid 1px #37ed52;
     outline: none;
-    box-shadow: 3px 3px 0px #397c43;
 }
 
-.radioBtn {
+#read {
     cursor: pointer;
+    border: none;
+}
+
+#read:checked {
+    accent-color: #37ed52;
 }
 
 .add-div {
