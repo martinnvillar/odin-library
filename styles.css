@@ -7,6 +7,9 @@
 body {
     margin: 0;
     background-color: #131339;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 @font-face {
@@ -22,6 +25,10 @@ body {
 * {
     font-family: 'MyFont';
     font-weight: bold;
+}
+
+main {
+    flex: 1;
 }
 
 h1 {

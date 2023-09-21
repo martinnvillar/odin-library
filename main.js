@@ -10,6 +10,11 @@ addBtn.addEventListener('click', () => {
     document.body.classList.add('locked-scroll');
 });
 
+cancelBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    bookDialog.close();
+})
+
 function Book(title, author, pages, isRead) {
     this.title = title;
     this.author = author;
