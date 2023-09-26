@@ -97,6 +97,15 @@ dialog {
     }
 }
 
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(1, auto);
+    justify-content: center;
+    gap: 20px;
+}
+
 fieldset {
     display: flex;
     flex-direction: column;
