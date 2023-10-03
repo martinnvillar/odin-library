@@ -33,10 +33,15 @@ main {
 
 h1 {
     font-family: 'BoldFont';
-    text-shadow: 4px 4px 0px #397c43;
     color: #37ed52;
     font-size: 70px;
     font-weight: lighter;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+h1:hover {
+    text-shadow: 4px 4px 0px #397c43;
+    cursor:default;
 }
 
 .title-div {
@@ -55,21 +60,22 @@ h1 {
     justify-content: center;
     align-items: center;
     height: 60px;
-    width: 130px;
+    width: 120px;
     border-radius: 0px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     background-color: #37ed52;
     color: #ffffff;
     font-family: 'BoldFont';
-    box-shadow: 4px 4px 0px #397c43; 
-    transition: transform 0.4s ease-in-out;
-    border: none;
+    border: 1px solid #37ed52;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .addBtn:hover {
-    transform: scale(0.95);
+    background-color: #131339;
     cursor: pointer;
+    border: 1px solid #37ed52;
+    color: #37ed52;
 }
 
 label:hover {
@@ -103,7 +109,6 @@ dialog {
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(1, auto);
     justify-content: center;
-    gap: 20px;
 }
 
 fieldset {
@@ -114,7 +119,6 @@ fieldset {
     width: 22%;
     gap: 10px;
     border: solid 1px #37ed52;
-    box-shadow: 5px 5px 0px #397c43;
     margin: 0;
 }
 
@@ -125,10 +129,12 @@ fieldset {
     border: solid 1px #37ed52;
     color: #ffffff;
     padding: 5px;
+    transition: box-shadow 0.2s ease-in-out;
 }
 
 .text-input:focus {
     border: solid 1px #37ed52;
+    box-shadow: 3px 3px 0px #397c43;
     outline: none;
 }
 
@@ -152,22 +158,20 @@ fieldset {
 .cancel {
     height: 40px;
     width: 70px;
-    transition: transform 0.4s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.confirm:hover,
-.cancel:hover,
-.trash-ico:hover,
-.read:hover,
-.not-read:hover {
+.cancel:hover {
+    background-color: #131339;
+    border: 1px solid #ed3d37;
     cursor: pointer;
-    transform: scale(0.96);
+    color: #ed3d37;
 }
 
 .confirm {
     background-color: #37ed52;
     color: #ffffff;
-    border: none;
+    border: solid 1px #37ed52;
 }
 
 .cancel {
@@ -216,14 +220,14 @@ a:visited {
 
 h2 {
     color: #37ed52;
+    margin-bottom: 0;
 }
 
 .book-card {
     border: solid 1px #37ed52;
     color: #ffffff;
     padding: 10px;
-    box-shadow: 4px 4px 0px #397c43;
-    height: 220px;
+    height: 230px;
     width: 270px;
     margin: 20px;
 }
@@ -243,31 +247,34 @@ h2 {
 .trash-ico {
     height: 29px;
     width: 29px;
-    transition: transform 0.4s ease-in-out;
+    transition: filter 0.3s ease-in-out;
 }
 
-.read {
+.trash-ico:hover {
+    filter: opacity(0.5);
+    cursor: pointer;
+}
+
+.read-btn {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #37ed52;
     color: #ffffff;
-    border: none;
+    border: solid 1px #37ed52;
     height: 35px;
     width: 55px;
-    transition: transform 0.5s ease-in-out;
-}
-
-.not-read {
-    background-color: #ed3d37;
-    color: #ffffff;
-    font-size: 10px;
-    border: none;
-    height: 35px;
-    width: 55px;
-    transition: transform 0.5s ease-in-out;
+    transition: background-color 0.3s ease;
 }
 
 .locked-scroll {
     overflow: hidden;
+}
+
+.read-btn:hover,
+.confirm:hover {
+    background-color: #131339;
+    border: 1px solid #37ed52;
+    cursor: pointer;
+    color: #37ed52;
 }
