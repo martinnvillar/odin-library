@@ -3,6 +3,13 @@ const cancelBtn = document.querySelector('.cancel');
 const bookDialog = document.querySelector('#book-dialog');
 const confirmBook = document.querySelector('.confirm');
 const cardsCont = document.querySelector('.cards-container');
+const addTitle = bookDialog.querySelector('#title');
+const addAuthor = bookDialog.querySelector('#author');
+const numbOfPages = bookDialog.querySelector('#pages');
+const bookStatus = bookDialog.querySelector('#read');
+const bookForm = bookDialog.querySelector('form');
+const statusBtn = document.querySelector('#change-status');
+
 let myLibrary = [];
  
 
@@ -11,66 +18,58 @@ addBtn.addEventListener('click', () => {
 });
 
 confirmBook.addEventListener('click', () => {
-    addBookToLibrary();
-    insertBook();
-    console.log()
+    if(addTitle.value == '' || addAuthor.value == '' || numbOfPages.value == '') {
+        alert('All the inputs are required!');
+        return null;
+    } else {
+        myLibrary.push(new Book(addTitle.value, addAuthor.value, numbOfPages.value,bookStatus.checked));
+        insertBook();
+        bookDialog.close();
+        bookForm.reset();
+    }
 });
 
 cancelBtn.addEventListener('click', (event) => {
     event.preventDefault();
     bookDialog.close();
+    bookForm.reset();
 })
 
+
+
 function Book(title, author, pages, status) {
+    this.id = Date.now();
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.status = status;
-};
-
-function addBookToLibrary() {
-    const addTitle = document.querySelector('#title').value;
-    const addAuthor = document.querySelector('#author').value;
-    const numbOfPages = document.querySelector('#pages').value;
-    const bookStatus = document.querySelector('#read').checked;
-    const bookForm = document.querySelector('form');
-
-    const book = new Book(addTitle, addAuthor, numbOfPages, bookStatus);
-
-    if (addTitle !== '' & addAuthor !== '' & numbOfPages !== '') {
-        myLibrary.push(book);
+    if(status) {
+        this.status = 'Read';
     } else {
-        null
-    };
-    bookForm.reset();
-}
-
+        this.status = 'Not Read';
+    }
+};
 
 function insertBook() {
     let bookCard = '';
-    if (myLibrary) {
-        myLibrary.forEach((book, index) =>
+    
+    myLibrary.forEach((book, index) =>
         bookCard += 
-        `<div class="cards-container">
-            <div class="book-card">
+        `<div class="book-card">
                 <h2>${book.title}</h2>
                 <h3>by ${book.author}</h3>
                 <p>${book.pages} pages</p>
                 <div class="card-btn">
-                    <button class="read"><p></p></button>
-                    <button class="delete-card"><img class="trash-ico" src="trash.svg" alt="trash-ico"></button>
+                    <button class="read-btn" onclick=""><p>${book.status}</p></button>
+                    <button class="delete-card" onclick="removeBook(${book.id})"><img class="trash-ico" src="trash.svg" alt="trash-ico"></button>
                 </div>
-            </div>
-        </div>`
-        
-        )};
-        cardsCont.innerHTML = bookCard;
+            </div>`
+            
+            )
+            cardsCont.innerHTML = bookCard;
 };
 
-
-
-
-
-
-
-
+function removeBook(bookId) {
+    myLibrary = myLibrary.filter(book => book.id !== bookId);
+    insertBook();
+    console.log(`${bookId} Successfully deleted!`);
+};
