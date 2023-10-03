@@ -1,3 +1,4 @@
+//get all HTML elements
 const addBtn = document.querySelector('.addBtn');
 const cancelBtn = document.querySelector('.cancel');
 const bookDialog = document.querySelector('#book-dialog');
@@ -9,10 +10,9 @@ const numbOfPages = bookDialog.querySelector('#pages');
 const bookStatus = bookDialog.querySelector('#read');
 const bookForm = bookDialog.querySelector('form');
 const statusBtn = document.querySelector('#change-status');
-
 let myLibrary = [];
  
-
+// create event listeners for all buttons
 addBtn.addEventListener('click', () => {
     bookDialog.showModal();
 });
@@ -35,20 +35,20 @@ cancelBtn.addEventListener('click', (event) => {
     bookForm.reset();
 })
 
-
-
+//book constructor
 function Book(title, author, pages, status) {
     this.id = Date.now();
     this.title = title;
     this.author = author;
     this.pages = pages;
-    if(status) {
+    if(status === true) {
         this.status = 'Read';
     } else {
         this.status = 'Not Read';
     }
 };
 
+// make the book cards appear on the page
 function insertBook() {
     let bookCard = '';
     
@@ -68,6 +68,7 @@ function insertBook() {
             cardsCont.innerHTML = bookCard;
 };
 
+// remove book cards
 function removeBook(bookId) {
     myLibrary = myLibrary.filter(book => book.id !== bookId);
     insertBook();
