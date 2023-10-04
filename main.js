@@ -48,7 +48,7 @@ function Book(title, author, pages, status) {
     }
 };
 
-// make the book cards appear on the page
+// make the book cards appear on the grid container
 function insertBook() {
     let bookCard = '';
     
@@ -59,7 +59,7 @@ function insertBook() {
                 <h3>by ${book.author}</h3>
                 <p>${book.pages} pages</p>
                 <div class="card-btn">
-                    <button class="read-btn" onclick=""><p>${book.status}</p></button>
+                    <button class="read-btn" onclick="toggleRead(${book.id})"><p>${book.status}</p></button>
                     <button class="delete-card" onclick="removeBook(${book.id})"><img class="trash-ico" src="trash.svg" alt="trash-ico"></button>
                 </div>
             </div>`
@@ -72,5 +72,17 @@ function insertBook() {
 function removeBook(bookId) {
     myLibrary = myLibrary.filter(book => book.id !== bookId);
     insertBook();
-    console.log(`${bookId} Successfully deleted!`);
+    console.log(`${book.id} Successfully deleted!`);
+};
+
+function toggleRead(bookId) {
+    const index = myLibrary.findIndex(book => book.id === bookId);
+    if (index !== -1) {
+        const book = myLibrary[index];
+        book.status = book.status === "Read" ? "Not Read" : "Read";
+        const buttonStatus = document.querySelector(`.read-btn:nth-child(${index + 1}) p`);
+        if (buttonStatus) {
+            buttonStatus.innerHTML = book.status;
+        }
+    }
 };
